@@ -1,0 +1,403 @@
+
+/*PEQUEÑA GUIA: LOS ELEMENTOS QUE NO TENGAN NINGUN SUFIJO SON PARA EL INDEX O PARA EL DOCUMENTO EN GENERAL*/
+/*LOS ELEMENTOS QUE TENGAN "CONT" EN EL NOMBRE SON PARA LA PÁGINA DE CONTACTO */
+/*LOS QUE TENGAN PROYECTOS O PROY EN EL NOMBRE SON PARA LA PAGINA DE PROYECTOS...*/
+/*ESTA UN POCO DESPELOTADO PERO TIENE SENTIDO :)*/
+
+body {
+  background-color: black;
+  background-image: radial-gradient(
+    rgba(16, 16, 16, 0.75), black 120%
+  );
+  height: 100vh;
+  /*  color: #002dff; este color no me convenció */
+  color: white;
+  font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+  font-style: normal;
+    text-shadow: 0 0 5px #002dff;
+    overflow: hidden;
+
+}
+
+.modo_claro{
+    background-color: white;
+      background-image: radial-gradient(
+    rgba(255, 255, 255, 0.75), rgb(255, 255, 255) 120%
+  );
+    color: black;
+    text-shadow: 0 0 5px #bcc1db;
+
+}
+
+.texto_terminal{
+    padding: 1%;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.tema_naranja{
+    text-shadow: 0 0 5px #ffb700;
+}
+
+@keyframes links{
+    0% {color: white;}
+    50% {color: yellow;}
+    100% {color: white;}
+}
+
+.botones{
+    padding: 1%;
+    background-color: transparent;
+    border: none;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: bolder;
+    color: white;
+    font-size: 1.3rem;
+    text-decoration: underline;
+    animation-name: links;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.botones:hover{
+    cursor: pointer;
+}
+
+#logo{
+    width: 50%;
+    height: 50%;
+    filter: invert();
+    margin: -2% -2% -5% -5%;
+    float: left;
+}
+
+#logo_cont{
+    width: 50%;
+    height: 50%;
+    filter: invert();
+    margin: auto;
+    margin-top: -8%;
+    margin-bottom: -5%;
+}
+
+#logo_wsp{
+  width: 70%;
+  height: 70%;
+  filter: hue-rotate(60deg);
+
+}
+
+body.modo_claro #logo{
+    filter:invert(0%)
+}
+
+body.tema_naranja #logo{
+    filter: invert(60%) sepia(100%) saturate(1000%) hue-rotate(5deg);
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+pointer-events: none;
+}
+
+
+.header {
+  position: relative;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  padding-top: 1%;
+  margin: 0px;
+  overflow: hidden;
+  justify-content: space-between;
+  text-align: end;
+  align-items: stretch;
+  width: auto;
+}
+
+.main {
+  
+  display: flex; 
+  flex-direction: row; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  margin-top: 1%;
+  border: 2%;
+}
+
+.main_cont {
+  
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  margin-top: 1%;
+  border: 2%;
+  
+}
+
+.maintext_cont {
+margin: 5%;
+}
+
+.main_proyectos {
+    position: relative;
+    padding: 1%;
+    padding-right: 1%;
+    padding-top: 2%;
+    top: 0;
+    left: 0;
+    width: 35%;
+}
+
+
+.shortcut {
+color: #5acbff;
+font-size: 20px;
+line-height: 1;
+font-family: "IBM Plex Mono", monospace;
+font-optical-sizing: auto;
+font-weight: bold;
+text-decoration: none;
+font-size: 2rem;
+}
+
+.shortcut_cont {
+color: #5acbff;
+font-size: 20px;
+line-height: 1;
+font-family: "IBM Plex Mono", monospace;
+font-optical-sizing: auto;
+font-weight: bold;
+text-decoration: none;
+font-size: 1.2rem;
+}
+
+body.modo_claro .shortcut {
+  color: blue;
+}
+
+body.tema_naranja .shortcut {
+    color: orange
+}
+
+#pag{
+  display: flex;
+  flex-direction: row;
+  margin: 3%;
+  overflow: hidden;
+  overflow-y: hidden; 
+  overflow-x: hidden;
+}
+
+#pag_cont{
+  display: flex;
+  flex-direction: column;
+  margin: 3%;
+  overflow: hidden;
+  overflow-y: hidden; 
+  overflow-x: hidden;
+}
+
+.todo{
+position: static;
+margin-left: auto;
+max-width: 60%;
+padding: 1%;
+padding-right: 1%;
+}
+
+
+
+.terminal{
+    position: relative;
+    margin-right: auto;
+    padding: 1%;
+    padding-right: 1%;
+    padding-top: 2%;
+    top: 0;
+    left: 0;
+    width: 35%;
+}
+
+
+.UITerminal{
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    background-color: blue;
+    overflow: hidden;
+}
+
+body.tema_naranja .UITerminal {
+    background-color: orange;
+}
+
+.texto{
+font-size: 1.7rem;
+text-align: justify;
+text-justify: inter-word;
+}
+
+.texto_cont{
+font-size: 1.2rem;
+text-align: justify;
+text-justify: inter-word;
+}
+
+.texto_proy{
+font-size: 1.5rem;
+text-align: justify;
+text-justify: inter-word;
+}
+
+.titulo{
+letter-spacing: -0.5rem;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 8rem;
+  line-height: 1;
+  text-align: start;
+  margin: -1% 0 10% -2%;
+
+}
+
+.todo_proyectos{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    padding-right: 1%;
+    padding-top: 1.2%;
+    top: 0;
+    left: 0;
+    width: auto;
+    margin-left: auto;
+}
+
+#link_logo{
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+@keyframes logos {
+0% {filter: invert();}
+50% {filter: invert(60%) sepia(100%) saturate(1000%) hue-rotate(130deg);}
+100% {filter: invert();}
+}
+
+#logo_cont:hover{
+animation-name: logos;
+animation-duration: 1s;
+
+}
+
+
+
+@keyframes marco1 {
+  0% {background-color: #002dff;}
+  25% {background-color: #ffff00;}
+  50% {background-color: #00ffff;}
+  75% {background-color: #ff00ff;}
+  100% {background-color: #002dff;}
+}
+
+@keyframes hover_marco {
+  0% {background-color: #37383a;}
+  50% {background-color: #6d6e71;}
+  100% {background-color: #37383a;}
+
+}
+
+.cuadri{
+  margin: 5%;
+  margin-top: 7%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.marco1{
+  background-color: #002dff;
+  width: 20vh;
+  height: 20vh;
+  animation-name: marco1;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.marco2{
+  background-color: #ffea00;
+  width: 20vh;
+  height: 20vh;
+  animation-name: marco1;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.2s;
+}
+
+.marco3{
+  background-color: #91ff00;
+  width: 20vh;
+  height: 20vh;
+  animation-name: marco1;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.4s;
+
+}
+
+.marco4{
+  background-color: #ff0055;
+  width: 20vh;
+  height: 20vh;
+  animation-name: marco1;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.6s;
+
+}
+
+.marco1:hover,
+.marco2:hover,
+.marco3:hover,
+.marco4:hover {
+transform: scale(2.0);
+transform: rotate(5deg);
+cursor: pointer;
+animation-name: hover_marco;
+animation-duration: 5s;
+animation-iteration-count: infinite;
+animation-delay: 0;
+animation-fill-mode: forwards
+}
+
+.numero{
+  letter-spacing: 2rem;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 15rem;
+  line-height: 1;
+  text-align: center;
+  margin: -8%;
+  margin-left: 1%;
+  }
+
