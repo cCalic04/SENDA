@@ -3,6 +3,8 @@
 /*LOS ELEMENTOS QUE TENGAN "CONT" EN EL NOMBRE SON PARA LA PÁGINA DE CONTACTO */
 /*LOS QUE TENGAN PROYECTOS O PROY EN EL NOMBRE SON PARA LA PAGINA DE PROYECTOS...*/
 /*ESTA UN POCO DESPELOTADO PERO TIENE SENTIDO :)*/
+/*Creditos primera versión de la página: Simon Diaz*/
+/*Creditos version responsive: Claude... Me dio mucha flojera hacer los clamp y los mediaqueries yo mismo*/
 
 body {
   background-color: black;
@@ -16,7 +18,7 @@ body {
     font-weight: 500;
   font-style: normal;
     text-shadow: 0 0 5px #002dff;
-    overflow: hidden;
+    overflow: scroll;
 
 }
 
@@ -152,6 +154,7 @@ pointer-events: none;
 
 .maintext_cont {
 margin: 5%;
+overflow: hidden;
 }
 
 .main_proyectos {
@@ -400,4 +403,266 @@ animation-fill-mode: forwards
   margin: -8%;
   margin-left: 1%;
   }
+
+
+/* ============================================================
+   RESPONSIVE — TABLETS Y PORTÁTILES PEQUEÑOS (≤ 1024px)
+   ============================================================ */
+@media (max-width: 1024px) {
+
+  /* --- INDEX: la terminal pasa abajo del texto --- */
+  #pag {
+    flex-direction: column;
+  }
+
+  .terminal {
+    width: 100%;
+    padding: 4% 4% 2% 4%;
+    order: 2; /* terminal al final */
+  }
+
+  .UITerminal {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+  }
+
+  .todo {
+    max-width: 100%;
+    order: 1;
+    padding: 4%;
+  }
+
+  /* --- INFO: proyectos apilados --- */
+  .main_proyectos {
+    width: 100%;
+    padding: 4%;
+  }
+
+  .todo_proyectos {
+    width: 100%;
+    padding: 4%;
+    margin-left: 0;
+  }
+
+  /* --- CONTACTO: grid de 2 columnas --- */
+  .main_cont {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* --- Tipografía fluida --- */
+  .titulo {
+    font-size: clamp(3rem, 8vw, 8rem);
+    letter-spacing: clamp(-0.15rem, -0.5vw, -0.5rem);
+    margin: -1% 0 6% -1%;
+  }
+
+  .numero {
+    font-size: clamp(5rem, 15vw, 15rem);
+    letter-spacing: clamp(0.5rem, 2vw, 2rem);
+    margin: 0 0 2% 0;
+  }
+
+  .texto {
+    font-size: clamp(1rem, 2vw, 1.7rem);
+  }
+
+  .texto_proy {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+  }
+
+  .texto_cont {
+    font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+  }
+
+  .shortcut {
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+  }
+
+  .botones {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+  }
+
+  /* --- Grid de marcos: 3 columnas en tablet --- */
+  .cuadri {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+
+/* ============================================================
+   RESPONSIVE — MÓVIL (≤ 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* --- INDEX --- */
+  #pag {
+    flex-direction: column;
+    margin: 0;
+    padding: 4% 4% 0 4%;
+  }
+
+  .terminal {
+    width: 100%;
+    padding: 0 0 4% 0;
+    order: 2;
+  }
+
+  .UITerminal {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 180px;
+  }
+
+  .todo {
+    max-width: 100%;
+    padding: 0;
+    order: 1;
+  }
+
+  .header {
+    padding-top: 4%;
+    gap: 8px;
+  }
+
+  #logo {
+    width: 70%;
+    margin: 0 0 4% -2%;
+    float: none;
+    display: block;
+  }
+
+  /* --- INFO --- */
+  .main_proyectos {
+    width: 100%;
+    padding: 4%;
+    position: static;
+  }
+
+  .todo_proyectos {
+    width: 100%;
+    padding: 4%;
+    position: static;
+    margin-left: 0;
+  }
+
+  /* --- CONTACTO --- */
+  #pag_cont {
+    margin: 4%;
+  }
+
+  .main_cont {
+    grid-template-columns: 1fr;
+  }
+
+  #logo_cont {
+    width: 60%;
+    margin: 4% auto 2% auto;
+    margin-top: 0;
+  }
+
+  .maintext_cont {
+    margin: 2% 0;
+  }
+
+  /* --- Tipografía fluida móvil --- */
+  .titulo {
+    font-size: clamp(2.5rem, 12vw, 5rem);
+    letter-spacing: clamp(-0.1rem, -0.3vw, -0.3rem);
+    margin: 2% 0 8% 0;
+  }
+
+  .numero {
+    font-size: clamp(4rem, 20vw, 10rem);
+    letter-spacing: clamp(0.3rem, 1.5vw, 1.5rem);
+    margin: 0 0 4% 0;
+  }
+
+  .texto {
+    font-size: clamp(0.95rem, 4vw, 1.3rem);
+  }
+
+  .texto_proy {
+    font-size: clamp(0.95rem, 4vw, 1.2rem);
+  }
+
+  .texto_cont {
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+  }
+
+  .shortcut {
+    font-size: clamp(1rem, 4.5vw, 1.5rem);
+  }
+
+  .shortcut_cont {
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+  }
+
+  .botones {
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+    padding: 2% 1%;
+  }
+
+  .texto_terminal {
+    font-size: clamp(0.75rem, 3vw, 1rem);
+  }
+
+  /* --- Grid de marcos: 2 columnas en móvil --- */
+  .cuadri {
+    grid-template-columns: 1fr 1fr;
+    margin: 4%;
+    gap: 12px;
+  }
+
+  .marco1,
+  .marco2,
+  .marco3,
+  .marco4 {
+    width: 100%;
+    height: 16vw;
+    min-height: 80px;
+  }
+}
+
+
+/* ============================================================
+   RESPONSIVE — MÓVIL PEQUEÑO (≤ 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+
+  .titulo {
+    font-size: clamp(2rem, 14vw, 3.5rem);
+  }
+
+  .numero {
+    font-size: clamp(3rem, 22vw, 7rem);
+    letter-spacing: 0.5rem;
+  }
+
+  /* Grid de marcos: 1 sola columna en pantallas muy pequeñas */
+  .cuadri {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .marco1,
+  .marco2,
+  .marco3,
+  .marco4 {
+    height: 24vw;
+    min-height: 90px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
 
